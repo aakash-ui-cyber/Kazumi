@@ -56,7 +56,7 @@ class LayoutBreakpoint {
   static const Map<String, double> medium = {'width': 840, 'height': 900};
 }
 
-/// 随机UA列表
+/// Random user agent list
 const List<String> userAgentsList = [
   'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36',
   'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36',
@@ -69,7 +69,7 @@ const List<String> userAgentsList = [
   'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0',
 ];
 
-/// 默认 SyncPlay 服务器列表
+/// Default SyncPlay server list
 const List<String> defaultSyncPlayEndPoints = [
   'syncplay.pl:8995',
   'syncplay.pl:8996',
@@ -80,14 +80,14 @@ const List<String> defaultSyncPlayEndPoints = [
 
 const String defaultSyncPlayEndPoint = 'syncplay.pl:8996';
 
-/// 随机HTTP请求头accept-language字段列表
+/// Random HTTP request header accept-language field list
 const List<String> acceptLanguageList = [
   'zh-CN,zh;q=0.9',
   'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6',
   'zh-CN,zh-TW;q=0.9,zh;q=0.8,en-US;q=0.7,en;q=0.6',
 ];
 
-/// Bangumi API 文档要求的UA格式
+/// Bangumi API documentation required User-Agent format
 Map<String, String> bangumiHTTPHeader = {
   'user-agent':
       'Predidit/Kazumi/${ApiEndpoints.version} (Android) (https://github.com/Predidit/Kazumi)',
@@ -95,44 +95,44 @@ Map<String, String> bangumiHTTPHeader = {
   'content-type': 'application/json'
 };
 
-/// 可选硬件解码器
+/// Optional hardware decoders
 const Map<String, String> hardwareDecodersList = {
-  'auto': '启用任意可用解码器',
-  'auto-safe': '启用最佳解码器',
-  'auto-copy': '启用带拷贝功能的最佳解码器',
-  'd3d11va': 'DirectX11 (windows8 及以上)',
-  'd3d11va-copy': 'DirectX11 (windows8 及以上) (非直通)',
+  'auto': 'Enable any available decoder',
+  'auto-safe': 'Enable best decoder',
+  'auto-copy': 'Enable best decoder with copy',
+  'd3d11va': 'DirectX11 (Windows 8 and above)',
+  'd3d11va-copy': 'DirectX11 (Windows 8 and above) (non-direct)',
   'videotoolbox': 'VideoToolbox (macOS / iOS)',
-  'videotoolbox-copy': 'VideoToolbox (macOS / iOS) (非直通)',
+  'videotoolbox-copy': 'VideoToolbox (macOS / iOS) (non-direct)',
   'vaapi': 'VAAPI (Linux)',
-  'vaapi-copy': 'VAAPI (Linux) (非直通)',
-  'nvdec': 'NVDEC (NVIDIA独占)',
-  'nvdec-copy': 'NVDEC (NVIDIA独占) (非直通)',
+  'vaapi-copy': 'VAAPI (Linux) (non-direct)',
+  'nvdec': 'NVDEC (NVIDIA exclusive)',
+  'nvdec-copy': 'NVDEC (NVIDIA exclusive) (non-direct)',
   'drm': 'DRM (Linux)',
-  'drm-copy': 'DRM (Linux) (非直通)',
-  'vulkan': 'Vulkan (全平台) (实验性)',
-  'vulkan-copy': 'Vulkan (全平台) (实验性) (非直通)',
-  'dxva2': 'DXVA2 (Windows7 及以上)',
-  'dxva2-copy': 'DXVA2 (Windows7 及以上) (非直通)',
+  'drm-copy': 'DRM (Linux) (non-direct)',
+  'vulkan': 'Vulkan (all platforms) (experimental)',
+  'vulkan-copy': 'Vulkan (all platforms) (experimental) (non-direct)',
+  'dxva2': 'DXVA2 (Windows 7 and above)',
+  'dxva2-copy': 'DXVA2 (Windows 7 and above) (non-direct)',
   'vdpau': 'VDPAU (Linux)',
-  'vdpau-copy': 'VDPAU (Linux) (非直通)',
+  'vdpau-copy': 'VDPAU (Linux) (non-direct)',
   'mediacodec': 'MediaCodec (Android)',
-  'mediacodec-copy': 'MediaCodec (Android) (非直通)',
-  'cuda': 'CUDA (NVIDIA独占) (过时)',
-  'cuda-copy': 'CUDA (NVIDIA独占) (过时) (非直通)',
-  'crystalhd': 'CrystalHD (全平台) (过时)',
-  'rkmpp': 'Rockchip MPP (仅部分Rockchip芯片)',
+  'mediacodec-copy': 'MediaCodec (Android) (non-direct)',
+  'cuda': 'CUDA (NVIDIA exclusive) (deprecated)',
+  'cuda-copy': 'CUDA (NVIDIA exclusive) (deprecated) (non-direct)',
+  'crystalhd': 'CrystalHD (all platforms) (deprecated)',
+  'rkmpp': 'Rockchip MPP (Rockchip chips only)',
 };
 
-/// Android 可选视频渲染器
+/// Android optional video renderer
 const Map<String, String> androidVideoRenderersList = {
-  'auto': '自动选择',
-  'gpu': '基于 OpenGL, 通用和稳健的选项',
-  'gpu-next': '基于 Vulkan, 在新设备上表现最好',
-  'mediacodec_embed': '功耗最低，不支持超分辨率',
+  'auto': 'Auto select',
+  'gpu': 'Based on OpenGL, universal and robust option',
+  'gpu-next': 'Based on Vulkan, best performance on new devices',
+  'mediacodec_embed': 'Lowest power consumption, no upscaling support',
 };
 
-/// 超分辨率滤镜
+/// Super resolution filters
 const List<String> mpvAnime4KShaders = [
   'Anime4K_Clamp_Highlights.glsl',
   'Anime4K_Restore_CNN_VL.glsl',
@@ -142,7 +142,7 @@ const List<String> mpvAnime4KShaders = [
   'Anime4K_Upscale_CNN_x2_M.glsl'
 ];
 
-/// 超分辨率滤镜 (轻量)
+/// Super resolution filters (Lite)
 const List<String> mpvAnime4KShadersLite = [
   'Anime4K_Clamp_Highlights.glsl',
   'Anime4K_Restore_CNN_M.glsl',
@@ -153,7 +153,7 @@ const List<String> mpvAnime4KShadersLite = [
   'Anime4K_Upscale_CNN_x2_S.glsl'
 ];
 
-/// 可选播放倍速
+/// Optional playback speeds
 const List<double> defaultPlaySpeedList = [
   0.25,
   0.5,
@@ -171,49 +171,46 @@ const List<double> defaultPlaySpeedList = [
 
 const String danmakuOnSvg = '''
     <svg xmlns="http://www.w3.org/2000/svg" data-pointer="none" viewBox="0 0 24 24">
-      <path fill="#FFFFFF" fill-rule="evenodd" d="M11.989 4.828c-.47 0-.975.004-1.515.012l-1.71-2.566a1.008 1.008 0 0 0-1.678 1.118l.999 1.5c-.681.018-1.403.04-2.164.068a4.013 4.013 0 0 0-3.83 3.44c-.165 1.15-.245 2.545-.245 4.185 0 1.965.115 3.67.35 5.116a4.012 4.012 0 0 0 3.763 3.363l.906.046c1.205.063 1.808.095 3.607.095a.988.988 0 0 0 0-1.975c-1.758 0-2.339-.03-3.501-.092l-.915-.047a2.037 2.037 0 0 1-1.91-1.708c-.216-1.324-.325-2.924-.325-4.798 0-1.563.076-2.864.225-3.904.14-.977.96-1.713 1.945-1.747 2.444-.087 4.465-.13 6.063-.131 1.598 0 3.62.044 6.064.13.96.034 1.71.81 1.855 1.814.075.524.113 1.962.141 3.065v.002c.01.342.017.65.025.88a.987.987 0 1 0 1.974-.068c-.008-.226-.016-.523-.025-.856v-.027c-.03-1.118-.073-2.663-.16-3.276-.273-1.906-1.783-3.438-3.74-3.507-.9-.032-1.743-.058-2.531-.078l1.05-1.46a1.008 1.008 0 0 0-1.638-1.177l-1.862 2.59c-.38-.004-.744-.007-1.088-.007h-.13Zm.521 4.775h-1.32v4.631h2.222v.847h-2.618v1.078h2.618l.003.678c.36.026.714.163 1.01.407h.11v-1.085h2.694v-1.078h-2.695v-.847H16.8v-4.63h-1.276a8.59 8.59 0 0 0 .748-1.42L15.183 7.8a14.232 14.232 0 0 1-.814 1.804h-1.518l.693-.308a8.862 8.862 0 0 0-.814-1.408l-1.045.352c.297.396.572.847.825 1.364Zm-4.18 3.564.154-1.485h1.98V8.294h-3.2v.98H9.33v1.43H7.472l-.308 3.453h2.277c0 1.166-.044 1.925-.12 2.277-.078.352-.386.528-.936.528-.308 0-.616-.022-.902-.055l.297 1.067.062.005c.285.02.551.04.818.04 1.001-.067 1.562-.419 1.694-1.057.11-.638.176-1.903.176-3.795h-2.2Zm7.458.11v-.858h-1.254v.858h1.254Zm-2.376-.858v.858h-1.199v-.858h1.2Zm-1.199-.946h1.2v-.902h-1.2v.902Zm2.321 0v-.902h1.254v.902h-1.254Z" clip-rule="evenodd"/>
-      <path fill="#00AEEC" fill-rule="evenodd" d="M22.846 14.627a1 1 0 0 0-1.412.075l-5.091 5.703-2.216-2.275-.097-.086-.008-.005a1 1 0 0 0-1.322 1.493l2.963 3.041.093.083.007.005a1 1 0 0 0 1.354-.124l5.81-6.505.08-.102.005-.008a1 1 0 0 0-.166-1.295Z" clip-rule="evenodd"/>
+      <path fill="#FFFFFF" fill-rule="evenodd" d="M11.989 4.828c-.47 0-.975.004-1.515.012l-1.71-2.566a1.008 1.008 0 0 0-1.678 1.118l.999 1.5c-.681.018-1.403.04-2.164.068a4.013 4.013 0 0 0-3.83 3.[...]
+      <path fill="#00AEEC" fill-rule="evenodd" d="M22.846 14.627a1 1 0 0 0-1.412.075l-5.091 5.703-2.216-2.275-.097-.086-.008-.005a1 1 0 0 0-1.322 1.493l2.963 3.041.093.083.007.005a1 1 0 0 0 1.354[...]
     </svg>
     ''';
 
-/// 可选默认视频比例
+/// Optional default video aspect ratio
 const Map<int, String> aspectRatioTypeMap = {
-  1: "自动",
-  2: "裁切填充",
-  3: "拉伸填充",
+  1: "Auto",
+  2: "Crop Fill",
+  3: "Stretch Fill",
 };
 
-/// 可选播放器日志等级
-/// LogLevel 0: 错误 1: 警告 2: 简略 3: 详细 4: 调试（隐藏） 5: 全部（隐藏）
+/// Optional player log level
+/// LogLevel 0: Error 1: Warning 2: Brief 3: Verbose 4: Debug (hidden) 5: All (hidden)
 const Map<int, String> playerLogLevelMap = {
-  0: "错误",
-  1: "警告",
-  2: "简略",
-  3: "详细",
-  // 以下两个级别被MPV官方支持，但是输出内容过于冗长，暂时隐藏
-  // 4: "调试",
-  // 5: "全部",
+  0: "Error",
+  1: "Warning",
+  2: "Brief",
+  3: "Verbose",
 };
 
 final List<String> defaultAnimeTags = const [
-  '日常',
-  '原创',
-  '校园',
-  '搞笑',
-  '奇幻',
-  '百合',
-  '恋爱',
-  '悬疑',
-  '热血',
-  '后宫',
-  '机战',
-  '轻改',
-  '偶像',
-  '治愈',
-  '异世界',
+  'Slice of Life',
+  'Original',
+  'School',
+  'Comedy',
+  'Fantasy',
+  'Yuri',
+  'Romance',
+  'Mystery',
+  'Action',
+  'Harem',
+  'Mecha',
+  'Light Novel',
+  'Idol',
+  'Healing',
+  'Isekai',
 ];
 
-// 播放器默认快捷键
+// Player default shortcuts
 final Map<String, List<String>> defaultShortcuts = const {
   'playorpause': [' '],
   'forward': ['Arrow Right'],
@@ -235,37 +232,37 @@ final Map<String, List<String>> defaultShortcuts = const {
   'speeddown': ['Z'],
 };
 
-// 键位别名
+// Key aliases
 final Map<String, String> keyAliases = {
-  ' ': '空格',
+  ' ': 'Space',
   'Arrow Up': '↑',
   'Arrow Down': '↓',
   'Arrow Left': '←',
   'Arrow Right': '→',
-  'Enter': '回车',
+  'Enter': 'Enter',
   'Tab': 'Tab',
   'Escape': 'Esc',
-  'Backspace': '退格',
+  'Backspace': 'Backspace',
 };
 
-//功能中文名对应
+// Function English name mapping
 final Map<String, String> shortcutsChineseName = {
-  'playorpause': '播放 / 暂停',
-  'forward': '快进 / 长按倍速',
-  'rewind': '快退',
-  'next': '下一集',
-  'prev': '上一集',
-  'volumeup': '音量加',
-  'volumedown': '音量减',
-  'togglemute': '静音',
-  'fullscreen': '全屏',
-  'exitfullscreen': '退出全屏',
-  'toggledanmaku': '弹幕开关',
-  'screenshot': '截图',
-  'skip': '跳过',
-  'speed1': '倍速：1x',
-  'speed2': '倍速：2x',
-  'speed3': '倍速：3x',
-  'speedup': '倍速加',
-  'speeddown': '倍速减',
+  'playorpause': 'Play / Pause',
+  'forward': 'Fast Forward / Speed (Hold)',
+  'rewind': 'Rewind',
+  'next': 'Next Episode',
+  'prev': 'Previous Episode',
+  'volumeup': 'Volume Up',
+  'volumedown': 'Volume Down',
+  'togglemute': 'Mute',
+  'fullscreen': 'Fullscreen',
+  'exitfullscreen': 'Exit Fullscreen',
+  'toggledanmaku': 'Toggle Danmaku',
+  'screenshot': 'Screenshot',
+  'skip': 'Skip',
+  'speed1': 'Speed: 1x',
+  'speed2': 'Speed: 2x',
+  'speed3': 'Speed: 3x',
+  'speedup': 'Speed Up',
+  'speeddown': 'Speed Down',
 };

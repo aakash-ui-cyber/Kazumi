@@ -191,8 +191,8 @@ class _AppWidgetState extends State<AppWidget>
     }
   }
 
-  /// 处理窗口关闭事件，
-  /// 需要使用 `windowManager.close()` 来触发，`exit(0)` 会直接退出程序
+  /// Handle window close event
+  /// Use `windowManager.close()` to trigger, `exit(0)` will exit the program directly
   @override
   void onWindowClose() {
     final setting = GStorage.setting;
@@ -212,15 +212,15 @@ class _AppWidgetState extends State<AppWidget>
         KazumiDialog.show(onDismiss: () {
           showingExitDialog = false;
         }, builder: (context) {
-          bool saveExitBehavior = false; // 下次不再询问？
+          bool saveExitBehavior = false;
 
           return AlertDialog(
-            title: const Text('退出确认'),
+            title: const Text('Exit Confirmation'),
             content: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                const Text('您想要退出 Kazumi 吗？'),
+                const Text('Are you sure you want to exit Kazumi?'),
                 const SizedBox(height: 24),
                 StatefulBuilder(builder: (context, setState) {
                   onChanged(value) {
@@ -233,7 +233,7 @@ class _AppWidgetState extends State<AppWidget>
                     spacing: 8,
                     children: [
                       Checkbox(value: saveExitBehavior, onChanged: onChanged),
-                      const Text('下次不再询问'),
+                      const Text('Do not ask again'),
                     ],
                   );
                 }),
@@ -247,7 +247,7 @@ class _AppWidgetState extends State<AppWidget>
                     }
                     exit(0);
                   },
-                  child: const Text('退出 Kazumi')),
+                  child: const Text('Exit Kazumi')),
               TextButton(
                   onPressed: () async {
                     if (saveExitBehavior) {
@@ -256,18 +256,18 @@ class _AppWidgetState extends State<AppWidget>
                     KazumiDialog.dismiss();
                     windowManager.hide();
                   },
-                  child: const Text('最小化至托盘')),
+                  child: const Text('Minimize to Tray')),
               const TextButton(
-                  onPressed: KazumiDialog.dismiss, child: Text('取消')),
+                  onPressed: KazumiDialog.dismiss, child: Text('Cancel')),
             ],
           );
         });
     }
   }
 
-  /// 处理前后台变更
-  /// windows/linux 在程序后台或失去焦点时只会触发 inactive 不会触发 paused
-  /// android/ios/macos 在程序后台时会先触发 inactive 再触发 paused, 回到前台时会先触发 inactive 再触发 resumed
+  /// Handle foreground and background changes
+  /// windows/linux will only trigger inactive when in the background or lose focus, not paused
+  /// android/ios/macos will trigger inactive first then paused when in the background, and inactive then resumed when returning to the foreground
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) async {
     super.didChangeAppLifecycleState(state);
@@ -308,9 +308,9 @@ class _AppWidgetState extends State<AppWidget>
     }
 
     Menu trayMenu = Menu(items: [
-      MenuItem(key: 'show_window', label: '显示窗口'),
+      MenuItem(key: 'show_window', label: 'Show Window'),
       MenuItem.separator(),
-      MenuItem(key: 'exit', label: '退出 Kazumi')
+      MenuItem(key: 'exit', label: 'Exit Kazumi')
     ]);
     await trayManager.setContextMenu(trayMenu);
   }
