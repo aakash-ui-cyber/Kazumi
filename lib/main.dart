@@ -53,11 +53,11 @@ void main() async {
         title: '初始化失败',
         localizationsDelegates: GlobalMaterialLocalizations.delegates,
         supportedLocales: const [
+          Locale('en', 'US'),
           Locale.fromSubtags(
               languageCode: 'zh', scriptCode: 'Hans', countryCode: "CN")
         ],
-        locale: const Locale.fromSubtags(
-            languageCode: 'zh', scriptCode: 'Hans', countryCode: "CN"),
+        locale: const Locale('en', 'US'),
         builder: (context, child) {
           return const StorageErrorPage();
         }));
