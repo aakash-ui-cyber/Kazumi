@@ -50,7 +50,7 @@ void main() async {
       });
     }
     runApp(MaterialApp(
-        title: '初始化失败',
+        title: 'Initialization Failed',
         localizationsDelegates: GlobalMaterialLocalizations.delegates,
         supportedLocales: const [
           Locale('en', 'US'),
