@@ -347,11 +347,11 @@ class _AppWidgetState extends State<AppWidget>
           title: "Kazumi",
           localizationsDelegates: GlobalMaterialLocalizations.delegates,
           supportedLocales: const [
+            Locale('en', 'US'),
             Locale.fromSubtags(
                 languageCode: 'zh', scriptCode: 'Hans', countryCode: "CN")
           ],
-          locale: const Locale.fromSubtags(
-              languageCode: 'zh', scriptCode: 'Hans', countryCode: "CN"),
+          locale: const Locale('en', 'US'),
           theme: lightTheme,
           darkTheme: effectiveDarkTheme,
           themeMode: themeProvider.themeMode,
